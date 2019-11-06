@@ -1,5 +1,14 @@
 <h1>Titles available for application</h1>
 
 <div *ngFor="let objPublicTitle of objPublicTitles">
-  <p>{{objPublicTitle.description}}</p>
+  <!-- <p>{{objPublicTitle.description}}</p>-->
+  <bm-card-public-titles
+  [description]="objPublicTitle.description"
+  [expiry]="objPublicTitle.expiry"
+  [rate]="objPublicTitle.rate"
+  [descriptionIndex]="objPublicTitle.descriptionIndex"
+  [titleType]="objPublicTitle.titleType"
+  [value]="objPublicTitle.value"
+  [titleCode]="objPublicTitle.titleCode">
+  </bm-card-public-titles>
 </div>

@@ -8,14 +8,21 @@ import { DirectTreasureService } from 'src/app/shared/services/investments/direc
 })
 export class DirectTreasureComponent implements OnInit {
 
-  objPublicTitles: Object = this.directTreasureService.getPublicTitles();
+  objPublicTitles: Object;// = this.directTreasureService.getPublicTitlesMock();
 
   constructor(
     private directTreasureService: DirectTreasureService
   ) { }
 
   ngOnInit() {
-    console.log('obj public titles ', this.objPublicTitles);
+
+    this.directTreasureService.getApiUrl().subscribe(
+      response => {
+        this.objPublicTitles = response;
+      },
+      error => console.log('Error ', error)
+    );
+  
   }
 
 }
