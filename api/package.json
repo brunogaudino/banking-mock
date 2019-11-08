@@ -1,0 +1,22 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "description": "Api Banking Mock",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Bruno C. A. Gaudino",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.12.3",
+    "consign": "^0.1.6",
+    "cors": "^2.8.5",
+    "dotenv": "^8.0.0",
+    "ejs": "^2.6.1",
+    "express": "^4.12.3",
+    "lowdb": "^1.0.0",
+    "nodemon": "^1.19.4"
+  }
+}

@@ -3,7 +3,10 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  apiUrlBase: 'http://localhost:3199/',
+  apiUrlInvestments: 'http://localhost:3199/investments/',
+  apiUrlDirectTreasure: 'http://localhost:3199/investments/listpublictitles/'
 };
 
 /*

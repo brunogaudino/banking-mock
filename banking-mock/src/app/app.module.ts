@@ -12,7 +12,7 @@ import { AppComponent } from './app.component';
     HttpClientModule
   ],
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   exports: [
     AppComponent,

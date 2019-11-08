@@ -1,4 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { environment } from "../../../../environments/environment";
 
 @Component({
   selector: 'bm-card-public-titles',
@@ -6,8 +7,11 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./card-public-titles.component.css']
 })
 export class CardPublicTitlesComponent implements OnInit {
+  
+  constUrl = environment.apiUrlDirectTreasure;
+  
   //Variables
-  @Input() titleCode: number;
+  @Input() titleCode;
   @Input() titleType: string;
   @Input() description: string;
   @Input() expiry: Date;
@@ -16,11 +20,16 @@ export class CardPublicTitlesComponent implements OnInit {
   @Input() descriptionIndex: string;
   @Input() codeIndex: number;
   @Input() percentIndex: number;
+  @Output() emitApplyClickTitle = new EventEmitter();
 
   constructor() { }
 
   ngOnInit() {
 
+  }
+
+  clickApplyTitle(){
+    this.emitApplyClickTitle.emit(this.titleCode);
   }
 
 }
