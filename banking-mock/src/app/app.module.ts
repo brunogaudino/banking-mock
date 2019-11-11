@@ -4,15 +4,22 @@ import { HttpClientModule } from "@angular/common/http";
 
 import { AppRoutingModule } from './app.routing.module';
 import { AppComponent } from './app.component';
+import { StoreModule } from '@ngrx/store';
+import { publicTitleReducer } from "./store/reducers/direct-treasure.reducer";
+
+const rootReducers = {
+  publicTitleReducer: publicTitleReducer
+}
 
 @NgModule({
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
-    HttpClientModule
+    StoreModule.forRoot(rootReducers)
   ],
   declarations: [
-    AppComponent,
+    AppComponent
   ],
   exports: [
     AppComponent,

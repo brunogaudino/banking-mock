@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
 
-import { DirectTreasureService } from 'src/app/shared/services/investments/direct-treasure/direct-treasure.service';
+import { ReduxService } from 'src/app/shared/services/redux.service';
 
 @Component({
   selector: 'app-contraction',
@@ -11,33 +10,14 @@ import { DirectTreasureService } from 'src/app/shared/services/investments/direc
 export class ContractionComponent implements OnInit {
 
   objPublicTitles: Object = {};
+  registerSubscription: any;
 
   constructor(
-    private directTreasureService: DirectTreasureService,
-    private routerParam: ActivatedRoute  
+    private reduxService: ReduxService
   ) { }
 
   ngOnInit() {
-
-    this.routerParam.params.subscribe(
-      params => this.getUrlParam(params['titleCode']),
-      error => console.log('Error ', error)
-    );
-
-  }
-      
-  getUrlParam(urlParam){
-
-    this.directTreasureService.getPublicTitlesParam(urlParam).subscribe(
-      response => {
-        response.map(data => {
-          this.objPublicTitles = data;
-        })
-        console.log('RESPONSE ', this.objPublicTitles);
-      },
-      error => console.log('Error ', error)
-    )
-
+    this.objPublicTitles = this.reduxService.getRedux();
   }
 
 }
