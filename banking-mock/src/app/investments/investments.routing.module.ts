@@ -1,8 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { DirectTreasureComponent } from './direct-treasure/direct-treasure.component';
+
 import { InvestmentsComponent } from './investments.component';
+import { DirectTreasureComponent } from './direct-treasure/direct-treasure.component';
 import { ContractionComponent } from './direct-treasure/contraction/contraction.component';
+import { ConfirmationComponent } from './direct-treasure/confirmation/confirmation.component';
+import { ReceiptComponent } from './direct-treasure/receipt/receipt.component';
 
 const routes: Routes = [
   {
@@ -16,6 +19,14 @@ const routes: Routes = [
   {
     path: 'direct-treasure/contraction/:titleCode',
     component: ContractionComponent  
+  },
+  {
+    path: 'direct-treasure/confirmation/:titleCode',
+    component: ConfirmationComponent  
+  },
+  {
+    path: 'direct-treasure/receipt',
+    component: ReceiptComponent  
   }
 ];
 
