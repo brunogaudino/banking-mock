@@ -23,16 +23,26 @@ export class DirectTreasureService {
     try {
       return this.http.get<IDirectTreasure[]>(environment.apiUrlDirectTreasure);      
     } catch (error) {
-      console.log('Catch error getPublicTitles service ', error);
+      console.log('Error catched getPublicTitles service ', error);
     }
   }
 
-  getPublicTitlesParam(idParam): Observable<IDirectTreasure[]> {
-    return this.http.get<IDirectTreasure[]>(environment.apiUrlDirectTreasure + idParam);
+  getPublicTitlesParam(idParam: number): Observable<IDirectTreasure[]> {
+    try {
+      return this.http.get<IDirectTreasure[]>(environment.apiUrlDirectTreasure + idParam);      
+    } catch (error) {
+      console.log('Error catched getPublicTitlesParam service ', error);
+    }
+
   }
 
-  getPublicTitleContration(idParam): Observable<IDirectTreasure[]> {
-    return this.http.get<IDirectTreasure[]>(environment.apiUrlDirectTreasure + idParam); 
+  getPublicTitleContration(idParam: number): Observable<IDirectTreasure[]> {
+    try {
+      return this.http.get<IDirectTreasure[]>(environment.apiUrlDirectTreasure + idParam);       
+    } catch (error) {
+      console.log('Error catched getPublicTitleContration service ', error);
+    }
+
   }
 
 }

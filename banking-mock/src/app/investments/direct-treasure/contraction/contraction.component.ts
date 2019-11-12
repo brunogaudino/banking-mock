@@ -17,7 +17,7 @@ export class ContractionComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.objPublicTitles = this.reduxService.getRedux();
+    this.objPublicTitles = this.reduxService.getRedux('publicTitleReducer');
   }
 
 }

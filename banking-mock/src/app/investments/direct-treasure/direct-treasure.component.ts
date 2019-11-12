@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { ReduxService } from 'src/app/shared/services/redux.service';
 import { DirectTreasureService } from 'src/app/shared/services/investments/direct-treasure/direct-treasure.service';
 import { IDirectTreasureState } from '../../store/state/direct-treasure.state';
+import { PUBLIC_TITLE_DIRECT_TREASURE } from 'src/app/store/actions/direct-treasure.actions';
 
 @Component({
   selector: 'bm-direct-treasure',
@@ -53,7 +54,7 @@ export class DirectTreasureComponent implements OnInit {
       stateTitleType: publicTitle[0].titleType,
       stateValue: publicTitle[0].value
     }
-    this.reduxService.setRedux(payload);
+    this.reduxService.setRedux(PUBLIC_TITLE_DIRECT_TREASURE, payload);
     this.router.navigate(['/investments/direct-treasure/contraction', titleCode]);
   }
 
