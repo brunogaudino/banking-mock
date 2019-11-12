@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { ReduxService } from 'src/app/shared/services/redux.service';
+
 @Component({
   selector: 'app-receipt',
   templateUrl: './receipt.component.html',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ReceiptComponent implements OnInit {
 
-  constructor() { }
+  objPublicTitles: Object = {};
+
+  constructor(
+    private reduxService: ReduxService
+  ) { }
 
   ngOnInit() {
+    this.objPublicTitles = this.reduxService.getRedux('publicTitleReducer');
   }
 
 }

@@ -1,4 +1,4 @@
-<h1>Contract public title</h1>
+<h1>Contraction public title</h1>
 <ul class="list-group">
   <li class="list-group-item">
     <span>description: </span> {{objPublicTitles.stateDescription}}
@@ -14,5 +14,11 @@
   </li>
   <li class="list-group-item">
     <span>expiry: </span> {{objPublicTitles.stateExpiry}}
+    <hr>
+    {{ objPublicTitles.stateTitleCode }}
+    <hr>
   </li>
 </ul>
+<hr>
+
+<button class="btn btn-primary" (click)="clickContractTitle(objPublicTitles.stateTitleCode)">Contract</button>

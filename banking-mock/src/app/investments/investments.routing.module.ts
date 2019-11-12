@@ -25,7 +25,7 @@ const routes: Routes = [
     component: ConfirmationComponent  
   },
   {
-    path: 'direct-treasure/receipt',
+    path: 'direct-treasure/receipt/:titleCode',
     component: ReceiptComponent  
   }
 ];
