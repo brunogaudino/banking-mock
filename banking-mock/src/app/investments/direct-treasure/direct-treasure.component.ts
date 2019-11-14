@@ -5,6 +5,7 @@ import { ReduxService } from 'src/app/shared/services/redux.service';
 import { DirectTreasureService } from 'src/app/shared/services/investments/direct-treasure/direct-treasure.service';
 import { IDirectTreasureState } from '../../store/state/direct-treasure.state';
 import { PUBLIC_TITLE_DIRECT_TREASURE } from 'src/app/store/actions/direct-treasure.actions';
+import { DataShareService } from 'src/app/shared/services/data-share.service';
 
 @Component({
   selector: 'bm-direct-treasure',
@@ -23,22 +24,29 @@ export class DirectTreasureComponent implements OnInit {
   titleType: string;
   value: number;
   registerSubscription: any;
+  objDataShare: object;
 
   constructor(
     private directTreasureService: DirectTreasureService,
     private router: Router,
-    private reduxService: ReduxService
+    private reduxService: ReduxService,
+    private dataShareService: DataShareService
   ) { }
 
   ngOnInit() {
 
     this.directTreasureService.getPublicTitles().subscribe(
       response => {
-        this.objPublicTitles = response;
+        this.setObjectPublicTitles(response);
       },
       error => console.log('Error ', error)
     );
   
+  }
+
+  setObjectPublicTitles(response){
+    this.objPublicTitles = response;
+    console.log('setObjectPublicTitles ', this.objPublicTitles);
   }
 
   applyClickTitle(titleCode){
@@ -54,7 +62,9 @@ export class DirectTreasureComponent implements OnInit {
       stateTitleType: publicTitle[0].titleType,
       stateValue: publicTitle[0].value
     }
-    this.reduxService.setRedux(PUBLIC_TITLE_DIRECT_TREASURE, payload);
+
+    //this.reduxService.setRedux(PUBLIC_TITLE_DIRECT_TREASURE, payload);
+    this.dataShareService.setObjDataShare(payload);
     this.router.navigate(['/investments/direct-treasure/contraction', titleCode]);
   }
 

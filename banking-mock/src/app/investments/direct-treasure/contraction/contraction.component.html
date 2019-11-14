@@ -1,24 +1,35 @@
-<h1>Contraction public title</h1>
-<ul class="list-group">
-  <li class="list-group-item">
-    <span>description: </span> {{objPublicTitles.stateDescription}}
-  </li>
-  <li class="list-group-item">
-    <span>descriptionIndex: </span> {{objPublicTitles.stateDescriptionIndex}}
-  </li>
-  <li class="list-group-item">
-    <span>titleCode: </span> {{objPublicTitles.stateTitleCode}}
-  </li>
-  <li class="list-group-item">
-    <span>titleType: </span> {{objPublicTitles.stateTitleType}}
-  </li>
-  <li class="list-group-item">
-    <span>expiry: </span> {{objPublicTitles.stateExpiry}}
-    <hr>
-    {{ objPublicTitles.stateTitleCode }}
-    <hr>
-  </li>
-</ul>
-<hr>
 
-<button class="btn btn-primary" (click)="clickContractTitle(objPublicTitles.stateTitleCode)">Contract</button>
+<div class="container">
+  <h1>Contraction public title</h1>
+  <p class="font-weight-bold">{{objPublicTitles.stateDescription}}</p>
+  <div class="row">
+    <div class="col-12">
+      <ul class="list-group">
+        <li class="list-group-item">
+          <span>Minimal title application: </span> <span class="font-weight-bold"> value</span>
+        </li>
+        <li class="list-group-item">
+          <span>Title value: </span> <span class="font-weight-bold"> {{objPublicTitles.stateValue | currency: 'BRL': true}}</span>
+        </li>
+        <li class="list-group-item">
+          <span>Broker's rate: </span> <span class="font-weight-bold"> value</span>
+        </li>
+        <li class="list-group-item">
+          <span>Yield rate: </span> <span class="font-weight-bold"> value</span>
+        </li>
+        <li class="list-group-item">
+          <span>Index: </span> <span class="font-weight-bold"> {{objPublicTitles.stateDescriptionIndex}}</span>
+        </li>
+        <li class="list-group-item">
+          <span>Title type: </span> <span class="font-weight-bold"> {{objPublicTitles.stateTitleType}}</span>
+        </li>
+        <li class="list-group-item">
+          <span>Expiration date: </span> <span class="font-weight-bold"> {{objPublicTitles.stateExpiry | date:'dd/MM/yyyy'}}</span>
+        </li>
+      </ul>
+      <button class="btn btn-primary mt-3 mb-3 w-100" (click)="clickContractTitle(objPublicTitles.stateTitleCode)">Contract</button>
+    </div>
+
+  </div>
+
+</div>

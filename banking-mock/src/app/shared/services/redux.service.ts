@@ -21,7 +21,7 @@ export class ReduxService {
     this.registerSubscription = this.store.subscribe(
       (state: IDirectTreasureState) => {
         this.returnState = state[reducerName];
-    });
+    }).unsubscribe();
 
     return this.returnState;
   }

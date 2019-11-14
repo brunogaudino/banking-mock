@@ -1,17 +1,21 @@
 <h1>Titles available for application</h1>
 
-<div *ngFor="let objPublicTitle of objPublicTitles">
-  <!-- <p>{{objPublicTitle.description}}</p>-->
-  <bm-card-public-titles
-  [titleCode]="objPublicTitle.titleCode"
-  [description]="objPublicTitle.description"
-  [expiry]="objPublicTitle.expiry"
-  [rate]="objPublicTitle.rate"
-  [descriptionIndex]="objPublicTitle.descriptionIndex"
-  [titleType]="objPublicTitle.titleType"
-  [value]="objPublicTitle.value"
-  (emitApplyClickTitle)="applyClickTitle(objPublicTitle.titleCode)"
-  >
-  <!-- (click)="applyClickTitle(objPublicTitle.titleCode)" -->
-  </bm-card-public-titles>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 mt-2 mb-2" *ngFor="let objPublicTitle of objPublicTitles">
+      <!-- <p>{{objPublicTitle.description}}</p>-->
+      <bm-card-public-titles
+      [titleCode]="objPublicTitle.titleCode"
+      [description]="objPublicTitle.description"
+      [expiry]="objPublicTitle.expiry"
+      [rate]="objPublicTitle.rate"
+      [descriptionIndex]="objPublicTitle.descriptionIndex"
+      [titleType]="objPublicTitle.titleType"
+      [value]="objPublicTitle.value"
+      (emitApplyClickTitle)="applyClickTitle(objPublicTitle.titleCode)"
+      >
+      <!-- (click)="applyClickTitle(objPublicTitle.titleCode)" -->
+      </bm-card-public-titles>
+    </div>
+  </div>
 </div>
