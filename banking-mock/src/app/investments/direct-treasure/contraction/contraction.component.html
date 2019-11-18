@@ -1,21 +1,49 @@
 
 <div class="container">
   <h1>Contraction public title</h1>
-  <p class="font-weight-bold">{{objPublicTitles.stateDescription}}</p>
   <div class="row">
     <div class="col-12">
+    <h2 class="font-weight-bold">{{objPublicTitles.stateDescription}}</h2>
+      <h3>Product details</h3>
       <ul class="list-group">
         <li class="list-group-item">
-          <span>Minimal title application: </span> <span class="font-weight-bold"> value</span>
+          <span>Value to apply: </span>
+          <input 
+            class="form-control font-weight-bold" 
+            type="text" 
+            #valueToApply 
+            id="valueToApply" 
+            placeholder="0" 
+            value="0"
+            (focusout)="focusOut()">
         </li>
+        <li class="list-group-item">
+          <span>Minimal title application: </span>
+          <input 
+            type="text" 
+            class="form-control font-weight-bold" 
+            id="quantityTitleApplication" 
+            placeholder="0,01" 
+            value="0,01">
+        </li>
+        <li class="list-group-item">
+          <div class="custom-control custom-switch">
+            <label class="custom-control-label" for="customSwitch1">Repeat monthly </label>
+            <input type="checkbox" class="custom-control-input" id="repeatMonthly">
+          </div>
+        </li>
+      </ul>
+      <hr>
+      <h3>Product details</h3>
+      <ul class="list-group">
         <li class="list-group-item">
           <span>Title value: </span> <span class="font-weight-bold"> {{objPublicTitles.stateValue | currency: 'BRL': true}}</span>
         </li>
         <li class="list-group-item">
-          <span>Broker's rate: </span> <span class="font-weight-bold"> value</span>
+          <span>Yields: </span> <span class="font-weight-bold"> need a json with yield list</span>
         </li>
         <li class="list-group-item">
-          <span>Yield rate: </span> <span class="font-weight-bold"> value</span>
+          <span>Broker's rate: </span> <span class="font-weight-bold"> {{objPublicTitles.stateRate | currency: 'BRL': true}} </span>
         </li>
         <li class="list-group-item">
           <span>Index: </span> <span class="font-weight-bold"> {{objPublicTitles.stateDescriptionIndex}}</span>
