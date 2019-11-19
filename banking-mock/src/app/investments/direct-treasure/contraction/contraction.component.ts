@@ -1,9 +1,10 @@
-import { Component, OnInit, Input, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, Input, ViewChild, ElementRef, OnChanges, SimpleChanges } from '@angular/core';
 import { Router } from '@angular/router';
 import * as $ from 'jquery';
 
 import { ReduxService } from 'src/app/shared/services/redux.service';
 import { DataShareService } from 'src/app/shared/services/data-share.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'bm-contraction',
@@ -14,7 +15,10 @@ export class ContractionComponent implements OnInit {
 
   objPublicTitles: Object = {};
   objDataShare: object;
+  stateValue: any;
   @ViewChild('valueToApply', {static: false}) valueToApply : ElementRef;
+  @ViewChild('titlePart', {static: false}) titlePart : ElementRef;
+  // @Input() valueToApply: Observable<any>;
 
   constructor(
     private reduxService: ReduxService,
@@ -29,14 +33,24 @@ export class ContractionComponent implements OnInit {
   }
 
   clickContractTitle(titleCode: number){
-    console.log('Click contract title ', this.valueToApply.nativeElement.value);
-    //this.router.navigate(['/investments/direct-treasure/confirmation', titleCode]);
+    //console.log('Click contract title ', this.valueToApply.nativeElement.value);
+    this.router.navigate(['/investments/direct-treasure/confirmation', titleCode]);
   }
 
-  focusOut(){
-    console.log('Call simulation and validation service');
-    console.log('FOCUS OUT ', this.valueToApply.nativeElement.value);
+  valueChange(objPublicTitlesValue){
+    //console.log('Call simulation and validation service ', objPublicTitlesValue);
+    if (this.valueToApply.nativeElement.value == 0) {
+      this.valueToApply.nativeElement.value = 30;
+    }
+    const valueResult = objPublicTitlesValue / (this.titlePart.nativeElement.value);
+    this.valueToApply.nativeElement.value = valueResult;
+
+    console.log('Contract valueToApply ', this.valueToApply.nativeElement.value);
+    console.log('Contract titlePart ', this.titlePart.nativeElement.value);
+    console.log('Contract objPublicTitlesValue ', objPublicTitlesValue);
+    console.log('Contract valueResult ', valueResult);
   }
+
 }
 
 /*

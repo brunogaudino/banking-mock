@@ -5,16 +5,16 @@ import { Injectable } from '@angular/core';
 })
 export class DataShareService {
 
-  objDataShare: any;
+  objPublicTitles: any;
 
   constructor() { }
 
   getObjDataShare(){
-    return this.objDataShare;
+    return this.objPublicTitles;
   }
 
-  setObjDataShare(objDataShare){
-    this.objDataShare = objDataShare;
+  setObjDataShare(objPublicTitles){
+    this.objPublicTitles = objPublicTitles;
   }
 
 }

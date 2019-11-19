@@ -9,22 +9,38 @@
         <li class="list-group-item">
           <span>Value to apply: </span>
           <input 
+            readonly
             class="form-control font-weight-bold" 
             type="text" 
             #valueToApply 
             id="valueToApply" 
-            placeholder="0" 
-            value="0"
-            (focusout)="focusOut()">
+            placeholder="{{objPublicTitles.stateValue | currency: 'BRL': true}}" 
+            value="{{objPublicTitles.stateValue | currency: 'BRL': true}}"
+            (keypress)="valueChange(objPublicTitles.stateValue)">
         </li>
         <li class="list-group-item">
           <span>Minimal title application: </span>
-          <input 
+          <select 
+            #titlePart 
+            class="custom-select"
+            (change)="valueChange(objPublicTitles.stateValue)">
+              <option selected value="0.01">0.1</option>
+              <option value="0.2">0.2</option>
+              <option value="0.3">0.3</option>
+              <option value="0.4">0.4</option>
+              <option value="0.5">0.5</option>
+              <option value="0.6">0.6</option>
+              <option value="0.7">0.7</option>
+              <option value="0.8">0.8</option>
+              <option value="0.09">0.9</option>
+              <option value="0.1">1</option>
+          </select>
+          <!-- <input 
             type="text" 
             class="form-control font-weight-bold" 
             id="quantityTitleApplication" 
             placeholder="0,01" 
-            value="0,01">
+            value="0,01"> -->
         </li>
         <li class="list-group-item">
           <div class="custom-control custom-switch">

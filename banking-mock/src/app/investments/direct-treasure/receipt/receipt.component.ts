@@ -25,7 +25,7 @@ export class ReceiptComponent implements OnInit, OnDestroy {
 
   }
   
-  ngOnDestroy(): void {
+  ngOnDestroy() {
     this.objPublicTitles;
   }
 
