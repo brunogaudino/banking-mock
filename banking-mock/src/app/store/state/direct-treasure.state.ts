@@ -9,6 +9,7 @@ export interface IDirectTreasureState {
   stateRate: number;
   stateTitleCode: number;
   stateTitleType: string;
+  stateYield: number;
   stateValue: number
 }
 
@@ -21,6 +22,7 @@ export const initialDirectTreasureState: IDirectTreasureState = {
   stateRate: 0,
   stateTitleCode: 0,
   stateTitleType: '',
+  stateYield: 0,
   stateValue: 0
 }
 

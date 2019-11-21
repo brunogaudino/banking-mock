@@ -5,10 +5,13 @@
     <span>Product: </span> <span class="font-weight-bold">{{objPublicTitles.stateDescription}}</span>
   </li>
   <li class="list-group-item">
-    <span>Application value: </span> <span class="font-weight-bold">app value</span>
+    <span>Application value: </span> <span class="font-weight-bold">{{objPublicTitles.stateCurrentApplyValue | currency: 'BRL': true}}</span>
   </li>
   <li class="list-group-item">
-    <span>Title quantity: </span> <span class="font-weight-bold">qty</span>
+    <span>Title quantity: </span> <span class="font-weight-bold">{{objPublicTitles.stateTitlePart}}</span>
+  </li>
+  <li class="list-group-item">
+    <span>Investment: </span> <span class="font-weight-bold">{{objPublicTitles.stateCurrentApplyValue | currency: 'BRL': true}}</span>
   </li>
   <li class="list-group-item">
     <span>Title value: </span> <span class="font-weight-bold">{{objPublicTitles.stateValue | currency: 'BRL': true}}</span>
@@ -17,7 +20,7 @@
     <span>Broker's rate: </span> <span class="font-weight-bold"> {{objPublicTitles.stateRate | currency: 'BRL': true}} </span>
   </li>
   <li class="list-group-item">
-    <span>Yield: </span> <span class="font-weight-bold">yield value</span>
+    <span>Yield: </span> <span class="font-weight-bold">{{objPublicTitles.stateYield}}%</span>
   </li>
   <li class="list-group-item">
     <span>expiry: </span> <span class="font-weight-bold">{{objPublicTitles.stateExpiry}}</span>

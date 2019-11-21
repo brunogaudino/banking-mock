@@ -8,7 +8,8 @@
     "value": "10060.25",
     "descriptionIndex": "SELIC",
     "codeIndex": "17",
-    "percentIndex": "0"
+    "percentIndex": "0",
+    "yield": "5"
   },
   {
     "titleCode": "179",
@@ -19,7 +20,8 @@
     "value": "820.10",
     "descriptionIndex": "prefixado",
     "codeIndex": "19",
-    "percentIndex": "0"
+    "percentIndex": "0",
+    "yield": "5"
   },
   {
     "titleCode": "111",
@@ -30,7 +32,8 @@
     "value": "3863.14",
     "descriptionIndex": "IPCA",
     "codeIndex": "22",
-    "percentIndex": "0"
+    "percentIndex": "0",
+    "yield": "6"
   },
   {
     "titleCode": "176",
@@ -41,7 +44,8 @@
     "value": "622.47",
     "descriptionIndex": "prefixado",
     "codeIndex": "19",
-    "percentIndex": "0"
+    "percentIndex": "0",
+    "yield": "2"
   },
   {
     "titleCode": "171",
@@ -52,7 +56,8 @@
     "value": "3596.72",
     "descriptionIndex": "IPCA",
     "codeIndex": "22",
-    "percentIndex": "0"
+    "percentIndex": "0",
+    "yield": "5"
   },
   {
     "titleCode": "160",
@@ -63,7 +68,8 @@
     "value": "4032.00",
     "descriptionIndex": "IPCA",
     "codeIndex": "22",
-    "percentIndex": "0"
+    "percentIndex": "0",
+    "yield": "5"
   },
   {
     "titleCode": "177",
@@ -74,7 +80,8 @@
     "value": "1099.42",
     "descriptionIndex": "prefixado",
     "codeIndex": "19",
-    "percentIndex": "0"
+    "percentIndex": "0",
+    "yield": "3"
   },
   {
     "titleCode": "103",
@@ -85,7 +92,8 @@
     "value": "2590.70",
     "descriptionIndex": "IPCA",
     "codeIndex": "22",
-    "percentIndex": "0"
+    "percentIndex": "0",
+    "yield": "5"
   },
   {
     "titleCode": "138",
@@ -96,7 +104,8 @@
     "value": "1585.15",
     "descriptionIndex": "IPCA",
     "codeIndex": "22",
-    "percentIndex": "0"
+    "percentIndex": "0",
+    "yield": "5"
   },
   {
     "titleCode": "174",
@@ -107,6 +116,7 @@
     "value": "1020.99",
     "descriptionIndex": "IPCA",
     "codeIndex": "22",
-    "percentIndex": "0"
+    "percentIndex": "0",
+    "yield": "5"
   }
 ]

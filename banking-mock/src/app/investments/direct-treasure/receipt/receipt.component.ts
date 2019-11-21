@@ -2,6 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 
 import { ReduxService } from 'src/app/shared/services/redux.service';
 import { DataShareService } from 'src/app/shared/services/data-share.service';
+import { IDirectTreasure } from 'src/app/shared/interfaces/direct-treasure.interface';
 
 @Component({
   selector: 'app-receipt',
@@ -10,7 +11,7 @@ import { DataShareService } from 'src/app/shared/services/data-share.service';
 })
 export class ReceiptComponent implements OnInit, OnDestroy {
   
-  objPublicTitles: Object = {};
+  objPublicTitles: IDirectTreasure;
   objDataShare: object;
 
   constructor(

@@ -20,6 +20,7 @@ export class CardPublicTitlesComponent implements OnInit {
   @Input() descriptionIndex: string;
   @Input() codeIndex: number;
   @Input() percentIndex: number;
+  @Input() yield: number;
   @Output() emitApplyClickTitle = new EventEmitter();
 
   constructor() { }

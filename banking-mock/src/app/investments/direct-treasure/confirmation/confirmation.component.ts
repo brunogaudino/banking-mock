@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ReduxService } from 'src/app/shared/services/redux.service';
 import { Router } from '@angular/router';
 import { DataShareService } from 'src/app/shared/services/data-share.service';
+import { IDirectTreasure } from 'src/app/shared/interfaces/direct-treasure.interface';
 
 @Component({
   selector: 'bm-confirmation',
@@ -10,7 +11,7 @@ import { DataShareService } from 'src/app/shared/services/data-share.service';
 })
 export class ConfirmationComponent implements OnInit {
 
-  objPublicTitles: Object = {};
+  objPublicTitles: IDirectTreasure;
   objDataShare: object;
 
   constructor(
@@ -22,7 +23,7 @@ export class ConfirmationComponent implements OnInit {
   ngOnInit() {
     //this.objPublicTitles = this.reduxService.getRedux('publicTitleReducer');
     this.objPublicTitles = this.dataShareService.getObjDataShare();
-    //console.log('Confirmation do service sahred ', this.objPublicTitles);
+    console.log('Confirmation do service sahred ', this.objPublicTitles);
   }
 
   clickConfirmationTitle(titleCode: number){

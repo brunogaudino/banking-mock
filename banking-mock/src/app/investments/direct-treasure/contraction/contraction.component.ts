@@ -5,6 +5,7 @@ import * as $ from 'jquery';
 import { ReduxService } from 'src/app/shared/services/redux.service';
 import { DataShareService } from 'src/app/shared/services/data-share.service';
 import { Observable } from 'rxjs';
+import { IDirectTreasure } from 'src/app/shared/interfaces/direct-treasure.interface';
 
 @Component({
   selector: 'bm-contraction',
@@ -13,13 +14,12 @@ import { Observable } from 'rxjs';
 })
 export class ContractionComponent implements OnInit {
 
-  objPublicTitles: Object = {};
-  objDataShare: object;
-  stateValue: any;
+  objPublicTitles: IDirectTreasure;
+  //objDataShare: object;
+  //stateValue: any;
   @ViewChild('valueToApply', {static: false}) valueToApply : ElementRef;
   @ViewChild('titlePart', {static: false}) titlePart : ElementRef;
-  // @Input() valueToApply: Observable<any>;
-
+  
   constructor(
     private reduxService: ReduxService,
     private router: Router,
@@ -33,32 +33,26 @@ export class ContractionComponent implements OnInit {
   }
 
   clickContractTitle(titleCode: number){
-    //console.log('Click contract title ', this.valueToApply.nativeElement.value);
+    this.objPublicTitles.stateCurrentApplyValue = this.valueToApply.nativeElement.value;
+    this.objPublicTitles.stateTitlePart  = this.titlePart.nativeElement.value;
     this.router.navigate(['/investments/direct-treasure/confirmation', titleCode]);
   }
 
   valueChange(objPublicTitlesValue){
-    //console.log('Call simulation and validation service ', objPublicTitlesValue);
     if (this.valueToApply.nativeElement.value == 0) {
       this.valueToApply.nativeElement.value = 30;
     }
     const valueResult = objPublicTitlesValue / (this.titlePart.nativeElement.value);
     this.valueToApply.nativeElement.value = valueResult;
-
-    console.log('Contract valueToApply ', this.valueToApply.nativeElement.value);
-    console.log('Contract titlePart ', this.titlePart.nativeElement.value);
-    console.log('Contract objPublicTitlesValue ', objPublicTitlesValue);
-    console.log('Contract valueResult ', valueResult);
   }
 
 }
 
 /*
 Needs implement the application simulation in the input value apply
-
 ------Add-----
 yields - create a json list
 value - input in app
-minimal value - input in app
 repeatly month - input in app
+minimal value - input in app
 */

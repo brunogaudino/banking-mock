@@ -5,7 +5,7 @@
 
 <ul class="list-group">
   <li class="list-group-item">
-    <span>Application value: </span> <span class="font-weight-bold">app value</span>
+    <span>Application value: </span> <span class="font-weight-bold">{{objPublicTitles.stateCurrentApplyValue | currency: 'BRL': true}}</span>
   </li>
   <li class="list-group-item">
     <span>Product: </span> <span class="font-weight-bold">{{objPublicTitles.stateDescription}}</span>
@@ -14,7 +14,7 @@
     <span>Broker's rate: </span> <span class="font-weight-bold">{{objPublicTitles.stateRate | currency: 'BRL': true}}</span>
   </li>
   <li class="list-group-item">
-    <span>Yield: </span> <span class="font-weight-bold">yield</span>
+    <span>Yield: </span> <span class="font-weight-bold">{{objPublicTitles.stateYield}}%</span>
   </li>
 </ul>
 
