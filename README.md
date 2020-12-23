@@ -1,2 +1,2 @@
 # banking-mock
-Simple banking mock app
+Banking mock app
